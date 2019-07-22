@@ -17,3 +17,8 @@ To run the build, do the following:
 ```bash
 ./rpmdev.sh [ --upstream URL ] [ --spec SPEC ] [ --rpmbuild PATH ] [arguments for rpmbuild]
 ```
+
+## AWS Notes
+
+Building this on an instance of type `t2.small` failed because sqlite wants to test files larger than 2 GB.
+Tests worked OK on `t2.large`.
