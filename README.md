@@ -8,14 +8,25 @@ as the upstream rpm, but an argument can be passed.
 
 Includes its own spec file because the one included in Fedora 23 did not quite work, differences are in `sqlite.spec.patch`.
 
-Defines macros to make the rpmbuild root under the checkout directory.
 
 ## Usage
 
-To run the build, do the following:
+To download the SRPM and verify its checksum, do:
 
 ```bash
-./rpmdev.sh [ --upstream URL ] [ --spec SPEC ] [ --rpmbuild PATH ] [arguments for rpmbuild]
+make verify
+```
+
+To extract it into the rpmbuild directory, by default ~/rpmbuild but can also be redefined in ~/.rpmmacros, do:
+
+```bash
+make setuptree
+```
+
+To build the rpm once it is extracted, run:
+
+```bash
+rpmbuild -ba sqlite.spec
 ```
 
 ## AWS Notes
