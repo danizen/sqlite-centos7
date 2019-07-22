@@ -17,7 +17,7 @@ To download the SRPM and verify its checksum, do:
 make verify
 ```
 
-To extract it into the rpmbuild directory, by default ~/rpmbuild but can also be redefined in ~/.rpmmacros, do:
+To extract it into the rpmbuild directory, by default `~/rpmbuild` but can also be redefined using `~/.rpmmacros`, do:
 
 ```bash
 make setuptree
@@ -33,3 +33,11 @@ rpmbuild -ba sqlite.spec
 
 Building this on an instance of type `t2.small` failed because sqlite wants to test files larger than 2 GB.
 Tests worked OK on `t2.large`.
+
+Because of the AMI we use at work, `/home/ec2-user` is not executable, so I do the following:
+
+```bash
+sudo install -d /opt/code -o ec2-user -g ec2-user
+cat <<EOF >~/.rpmmacros
+%_topdir /opt/code/rpmbuild
+```
