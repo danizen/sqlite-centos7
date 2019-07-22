@@ -15,5 +15,5 @@ Defines macros to make the rpmbuild root under the checkout directory.
 To run the build, do the following:
 
 ```bash
-./rpmdev.sh [ --upstream URL ] [ --spec SPEC ] [ --rpmbuild PATH ] [arguments for for rpmbuild]
+./rpmdev.sh [ --upstream URL ] [ --spec SPEC ] [ --rpmbuild PATH ] [arguments for rpmbuild]
 ```
