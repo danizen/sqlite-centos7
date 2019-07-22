@@ -40,4 +40,5 @@ Because of the AMI we use at work, `/home/ec2-user` is not executable, so I do t
 sudo install -d /opt/code -o ec2-user -g ec2-user
 cat <<EOF >~/.rpmmacros
 %_topdir /opt/code/rpmbuild
+EOF
 ```
